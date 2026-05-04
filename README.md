@@ -14,7 +14,6 @@
 - [Fonctionnalités principales](#fonctionnalités-principales)
 - [Stack technique](#stack-technique)
 - [Installation & lancement](#installation--lancement)
-- [Structure du projet](#structure-du-projet)
 - [Conventions de travail](#conventions-de-travail)
 - [Backlog & Suivi](#backlog--suivi)
 
