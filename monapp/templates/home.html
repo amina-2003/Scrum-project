@@ -1,0 +1,438 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Plot Listing HTML5 Website Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'css/templatemo-plot-listing.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link rel="stylesheet" href="{% static 'css/animated.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+<!--
+
+TemplateMo 564 Plot Listing
+
+https://templatemo.com/tm-564-plot-listing
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="{%url 'home'%}" class="logo">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="{%url 'home'%}" class="active">Acceuil</a></li>
+              <li><a href="{% url 'category'%}">Services</a></li>
+              <li><a href="{%url 'contact'%}">Contact</a></li> 
+              <li><div class="main-white-button"><a href="#"><i class="fa-solid fa-plus"></i>Se Connecter</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="top-text header-text">
+            <h6>Plus de 100 professionnels disponibles</h6>
+            <h2>Trouver les services idéales &amp; Rapides</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <form id="search-form" name="gs" method="submit" role="search" action="#">
+            <div class="row">
+              <div class="col-lg-3 align-self-center">
+                  <fieldset>
+                      <select name="area" class="form-select" aria-label="Area" id="chooseCategory" onchange="this.form.click()" >
+                          <option selected >Service demandé</option>
+                          <option value="Electricité">Electricité</option>
+                          <option value="Plomberie">Plomberie</option>
+                          <option value="Jardinage">Jardinage</option>
+                          <option value="Ménage">Ménage</option>
+                          <option value="Climatisation">Climatisation</option>
+                          <option value="Clé et serrure">Clé et serrure</option>
+                      </select>
+                  </fieldset>
+              </div>
+              <div class="col-lg-3 align-self-center">
+                  <fieldset>
+                      <input type="address" name="address" class="searchText" placeholder="Recherche" autocomplete="on" >
+                  </fieldset>
+              </div>
+              <div class="col-lg-3 align-self-center">
+                  <fieldset>
+                      <select name="price" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()" required>
+                          <option selected>Région</option>
+                          <option value="Tunis">Tunis</option>
+                          <option value="Ariana">Ariana</option>
+                          <option value="Sfax">Sfax</option>
+                          <option value="Sousse">Sousse</option>
+                          <option value="Gabes">Gabes</option>
+                          <option value="Bizerte">Bizerte</option>
+                          <option value="Kairouan">Kairouan</option>
+                      </select>
+                  </fieldset>
+              </div>
+              <div class="col-lg-3">  
+                                   
+                  <fieldset>
+                      <button class="main-button"><i class="fa fa-search"></i> Rechercher</button>
+                  </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+          <ul class="categories">
+            <li><a href="{% url 'category'%}"><span class="icon"><img src="{%static 'images/search-icon-01.png'%}" alt="Home"></span>Finitions</a></li>
+            <li><a href="{% url 'category'%}"><span class="icon"><img src="{%static 'images/search-icon-02.png'%}" alt="Food"></span> Réparation</a></li>
+            <li><a href="{% url 'category'%}"><span class="icon"><img src="{%static 'images/search-icon-03.png'%}" alt="Vehicle"></span> Sécurité</a></li>
+            <li><a href="{% url 'category'%}"><span class="icon"><img src="{%static 'images/search-icon-04.png'%}" alt="Shopping"></span> Nettoyage</a></li>
+            <li><a href="{% url 'category'%}"><span class="icon"><img src="{%static 'images/search-icon-05.png'%}" alt="Travel"></span> Déménagement</a></li>
+            <li><a href="{% url 'category'%}"><span class="icon"><img src="{%static 'images/search-icon-06.png'%}" alt="Travel"></span> Extérieur</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="results-container" class="mt-4" style="display: none;"></div>
+
+
+
+
+  <div class="popular-categories">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Les plus demandés</h2>
+            <h6>Découvrir</h6>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="menu">
+                    <div class="first-thumb active">
+                      <div class="thumb">
+                        <span class="icon"><img src="{%static 'images/search-icon-01.png'%}" alt=""></span>
+                        Peinture
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{%static 'images/search-icon-02.png'%}" alt=""></span>
+                        Bricolage
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{%static 'images/search-icon-03.png'%}" alt=""></span>
+                        Clé et serrure
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{%static 'images/search-icon-04.png'%}" alt=""></span>
+                        Ménage
+                      </div>
+                    </div>
+                    <div class="last-thumb">
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{%static 'images/search-icon-05.png'%}" alt=""></span>
+                        Déménagement
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-lg-9 align-self-center">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>Très demandé pour redonner vie à vos murs.</h4>
+                                <p>Le peintre est un professionnel indispensable lors d’un déménagement : il permet de rénover, rafraîchir ou personnaliser un nouveau logement. Très demandé, il garantit une finition propre et soignée pour bien s’installer.</p>
+                                <div class="main-white-button"><a href="#"><i class="fa fa-eye"></i> Discover More</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="{%static 'images/tabs-image-01.jpg'%}" alt="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>Toujours prêt pour les urgences et petites réparations.</h4>
+                                <p>Le bricoleur est un allié précieux en cas d’imprévus. Il intervient rapidement pour fixer, monter ou réparer, assurant un logement fonctionnel dès l’emménagement.</p>
+                                <div class="main-white-button"><a href="#"><i class="fa fa-eye"></i> Explore More</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="{%static 'images/tabs-image-02.jpg'%}" alt="Foods on the table">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>Indispensable en cas de perte ou de changement de clés.</h4>
+                                <p>Le serrurier intervient rapidement pour sécuriser votre nouveau logement. Qu’il s’agisse d’une urgence ou d’un changement de serrure après un déménagement, il garantit votre tranquillité.</p>
+                                <div class="main-white-button"><a href="listing.html"><i class="fa fa-eye"></i> More Listing</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="{%static 'images/tabs-image-03.jpg'%}" alt="cars in the city">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>Pour un nettoyage complet avant ou après votre installation.</h4>
+                                <p>La femme de ménage vous aide à emménager dans un logement propre ou à laisser l’ancien en bon état. Un service très utile pour gagner du temps et démarrer sur de bonnes bases.</p>
+                                <div class="main-white-button"><a href="#"><i class="fa fa-eye"></i> Discover More</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="{%static 'images/tabs-image-04.jpg'%}" alt="Shopping Girl">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-5 align-self-center">
+                              <div class="left-text">
+                                <h4>La solution simple et rapide pour tout transporter sans stress.</h4>
+                                <p>Les agences de déménagement prennent en charge l’organisation, le transport et la manutention. Très demandées, elles facilitent chaque étape du changement de domicile.</p>
+                                <div class="main-white-button"><a rel="nofollow" href="https://templatemo.com/contact"><i class="fa fa-eye"></i> Read More</a></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-7 align-self-center">
+                              <div class="right-image">
+                                <img src="{%static 'images/tabs-image-05.jpg'%}" alt="Traveling Beach">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="about">
+            <div class="logo">
+              <img src="{%static 'images/black-logo.png'%}" alt="Plot Listing">
+            </div>
+            <p>If you consider that <a rel="nofollow" href="https://templatemo.com/tm-564-plot-listing" target="_parent">Plot Listing template</a> is useful for your website, please <a rel="nofollow" href="https://www.paypal.me/templatemo" target="_blank">support us</a> a little via PayPal.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="helpful-links">
+            <h4>Helpful Links</h4>
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <ul>
+                  <li><a href="#">Categories</a></li>
+                  <li><a href="#">Reviews</a></li>
+                  <li><a href="#">Listing</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Awards</a></li>
+                  <li><a href="#">Useful Sites</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="contact-us">
+            <h4>Contact Us</h4>
+            <p>27th Street of New Town, Digital Villa</p>
+            <div class="row">
+              <div class="col-lg-6">
+                <a href="#">010-020-0340</a>
+              </div>
+              <div class="col-lg-6">
+                <a href="#">090-080-0760</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="sub-footer">
+            <p>Copyright © 2021 Plot Listing Co., Ltd. All Rights Reserved.
+            <br>
+			Design: <a rel="nofollow" href="https://templatemo.com" title="CSS Templates">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="{%static 'vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{%static 'js/owl-carousel.js'%}"></script>
+  <script src="{%static 'js/animation.js'%}"></script>
+  <script src="{%static 'js/imagesloaded.js'%}"></script>
+  <script src="{%static 'js/custom.js'%}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let cookie of cookies) {
+        cookie = cookie.trim();
+        if (cookie.startsWith(name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+  $(document).ready(function() {
+    console.log("Script AJAX chargé");
+
+    $('#search-form').on('submit', function(e) {
+      e.preventDefault(); 
+      console.log("Formulaire soumis");
+      const service = $('select[name="area"]').val();
+      const search = $('input[name="address"]').val();
+      const region = $('select[name="price"]').val();
+
+      const data = {
+        service: service === "Service demandé" ? "" : service,
+        search: search || "",
+        region: region === "Région" ? "" : region
+      };
+
+      $.ajax({
+        url: "{% url 'recherche_ajax' %}",
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': getCookie('csrftoken')
+        },
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        
+        success: function(response) {
+          $('#results-container').html(response.html).show();
+          setTimeout(function() {
+                document.getElementById("results-container").scrollIntoView({ behavior: 'smooth' });
+            }, 200);
+          
+        },
+        error: function(xhr, status, error) {
+          alert('Une erreur est survenue lors de la recherche : ' + error);
+          console.error('Erreur AJAX:', status, error, xhr.responseText);
+        }
+      });
+      
+    });
+  });
+</script>
+
+
+</body>
+
+</html>

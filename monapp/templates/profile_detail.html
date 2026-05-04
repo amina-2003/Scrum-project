@@ -1,0 +1,357 @@
+{% load static %}
+<!-- <h1>Profil de {{ profile.utilisateur.nom }}</h1>
+<p>Expérience : {{ profile.experience }}</p>
+<p>Clients satisfaits : {{ profile.clients_satisfaits }}</p>
+<p>Âge : {% if profile.age %}{{ profile.age }} ans{% else %}Non renseigné{% endif %}</p>
+
+ Liens réseaux sociaux 
+<div>
+  {% if profile.facebook_url %}
+    <a href="{{ profile.facebook_url }}" target="_blank">Facebook</a>
+  {% endif %}
+  {% if profile.instagram_url %}
+    <a href="{{ profile.instagram_url }}" target="_blank">Instagram</a>
+  {% endif %}
+  {% if profile.linkedin_url %}
+    <a href="{{ profile.linkedin_url }}" target="_blank">LinkedIn</a>
+  {% endif %}
+</div> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Profile de {{profile.utilisateur.nom}}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'css/templatemo-plot-listing.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animated.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="{%url 'home'%}" class="logo"></a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="{%url 'home'%}" class="active">Acceuil</a></li>
+              <li><a href="{% url 'category'%}">Services</a></li>
+              <li><a href="{%url 'contact'%}">Contact</a></li> 
+              <li><div class="main-white-button"><a href="#"><i class="fa fa-plus"></i>Se Connecter</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+    <!-- Hero Section -->
+    <section class="hero ">
+        
+        <div class="container hero-content ">
+            {% if profile.image %}
+              <img src="{{profile.image.url}}" alt="Sarah Martinez" class="agent-photo">
+            {% else %}
+              <img src="{%static 'images/icon-7797704_640.png'%}" alt=""  class="agent-photo">
+            {% endif %}
+            <div class="agent-info  ">
+              <div class="header-text">
+                <h1 >{{ profile.utilisateur.nom }}</h1>
+                <p class="agent-title ">{% if profile.services.all %}
+                  {% for service in profile.services.all %}
+                    {{ service.nom }}{% if not forloop.last %}, {% endif %}
+                  {% endfor %}
+                {% else %}
+                  Aucun service
+                {% endif %}</p>
+              </div>
+                <p class="agent-description ">{{profile.bio}}</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> {{profile.contact}}</p>
+                    <p><i class="fas fa-envelope"></i> {{profile.utilisateur.email}}</p>
+                </div>
+                <a href="#consult-form" class="btn ">Contacter</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <div class="stat-number">{{profile.note_moyenne}}</div>
+                <div class="stat-label">Note clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">{{profile.experience}}</div>
+                <div class="stat-label">D'experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">{{profile.clients_satisfaits}}+</div>
+                <div class="stat-label">Clients satisfaits</div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about">
+        <div class="container about-container">
+            <div class="about-info">
+                <h2>{{ profile.utilisateur.nom }}</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <div class="contact-details">
+                <h3>Contacts</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Phone</strong><br>
+                        +216 {{profile.contact}}
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        {{profile.utilisateur.email}}
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <img src="{%static 'images/panneau-de-localisation.png'%}"></i>
+                    <div>
+                        <strong>Adresse</strong><br>
+                        {{profile.utilisateur.region}}
+                    </div>
+                </div>
+                <div class="social-media">
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-official" ></i>
+                        </a>
+                        <a href="#" class="social-icon instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon whatsapp" aria-label="Whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-icon linkedin" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Details Section -->
+    <section class="details">
+        <div class="container details-container">
+            <div>
+              <h2 class="section-title">Specialties</h2>
+                <table class="specialties-table">
+                    <tr>
+                        <td>Luxury Homes</td>
+                        <td>First-Time Buyers</td>
+                    </tr>
+                    <tr>
+                        <td>Investment Properties</td>
+                        <td>Relocation</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+              <h2 class="section-title">Recent Achievements</h2>
+                
+                <ul class="achievements-list">
+                    <li>Top 5% of agents nationwide in 2023</li>
+                    <li>Closed over $25M in sales last year</li>
+                    <li>Winner of "Client Choice Award" 2023</li>
+                </ul>
+                </div>
+            </div>
+    </section>
+    {% if profile.portfolio_set.exists %}
+      <section class="portfolio">
+        <div class="container portfolio-container">
+          <h2>Portfolio</h2>
+          <div class="portfolio-items">
+              {% for item in profile.portfolio_set.all %}
+              <div class="portfolio-item">
+                <div class="portfolio-image">
+                  {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="{{ item.titre }}">
+                  {% endif %}
+                </div>
+                  <div class="portfolio-content">
+                  <h3>{{ item.titre }}</h3>
+                  <p>{{ item.description }}</p>
+                </div>
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+    <!-- Consultation Section -->
+     <section class="consultation" id="consult-form">
+    <div class="container">
+        <h2>Pour Plus De Details</h2>
+        <p class="consultation-intro">Prenez rendez-vous ou consultez un expert qualifié, à votre écoute et à votre service. </p>
+        
+        <form class="consultation-form">
+            <div class="form-group">
+                <label for="full-name">Nom et Prénom</label>
+                <input type="text" id="full-name" name="full-name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Adresse Email </label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Numéro de téléphone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="interest">Intéressé de</label>
+                <select id="interest" name="interest">
+                    <option value="buying">Prendre rendez-vous</option>
+                    <option value="selling">Comparer les prix</option>
+                    <option value="investing">Consulter un expert</option>
+                    <option value="other">Autre</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Parlez de vos besoins..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="service">Select Service</label>
+                <select id="service" name="service">
+                    <option value="residential">Réparation</option>
+                    <option value="commercial">Entretien</option>
+                    <option value="luxury">Installation</option>
+                    <option value="consultation">Service rapide</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+    </div>
+</section>
+    <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="about">
+            <div class="logo">
+              <img src="{%static 'images/black-logo.png'%}" alt="Plot Listing">
+            </div>
+            <p>If you consider that <a rel="nofollow" href="https://templatemo.com/tm-564-plot-listing" target="_parent">Plot Listing template</a> is useful for your website, please <a rel="nofollow" href="https://www.paypal.me/templatemo" target="_blank">support us</a> a little via PayPal.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="helpful-links">
+            <h4>Helpful Links</h4>
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <ul>
+                  <li><a href="#">Categories</a></li>
+                  <li><a href="#">Reviews</a></li>
+                  <li><a href="#">Listing</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Awards</a></li>
+                  <li><a href="#">Useful Sites</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="contact-us">
+            <h4>Contact Us</h4>
+            <p>27th Street of New Town, Digital Villa</p>
+            <div class="row">
+              <div class="col-lg-6">
+                <a href="#">010-020-0340</a>
+              </div>
+              <div class="col-lg-6">
+                <a href="#">090-080-0760</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="sub-footer">
+            <p>Copyright © 2021 Plot Listing Co., Ltd. All Rights Reserved.
+            <br>
+			Design: <a rel="nofollow" href="https://templatemo.com" title="CSS Templates">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Scripts -->
+  <script src="{%static 'vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{%static 'js/owl-carousel.js'%}"></script>
+  <script src="{%static 'js/animation.js'%}"></script>
+  <script src="{%static 'js/imagesloaded.js'%}"></script>
+  <script src="{%static 'js/custom.js'%}"></script>
+
+</body>
+</html>
+
+<!-- Formulaire ou lien pour contacter (email, téléphone, etc.) -->
