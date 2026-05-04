@@ -207,7 +207,6 @@ L'interface d'administration est accessible sur [http://127.0.0.1:8000/admin](ht
 
 ---
 
----
 
 ## 📐 Conventions de travail
 
@@ -243,16 +242,6 @@ test: ajout des tests sur le modèle Professional
 - Suivre les conventions **PEP 8**
 - Utiliser `flake8` pour le linting
 - Nommer les vues en **Class-Based Views (CBV)** de préférence
-
----
-
-## 📊 Backlog & Suivi
-
-Le backlog produit et le suivi des sprints sont gérés sur :
-
-- 📌 **[Lien vers Jira/Trello]** — Backlog & sprints
-- 📊 **[Lien vers le tableau Kanban]** — Suivi en temps réel
-- 📁 **[Lien vers Google Drive / Confluence]** — Documentation & specs
 
 ---
 
