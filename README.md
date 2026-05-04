@@ -258,7 +258,4 @@ Le backlog produit et le suivi des sprints sont gérés sur :
 
 ## 📄 Licence
 
-Ce projet est développé dans un cadre académique / professionnel. Tous droits réservés © 2025 — Équipe SOS Darek.
-## 📄 Licence
-
-Ce projet est développé dans un cadre académique / professionnel. Tous droits réservés © 2025 — Équipe SOS Darek.
+Ce projet est développé dans un cadre académique / professionnel. Tous droits réservés © 2026 — Équipe SOS Darek.
