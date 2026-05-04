@@ -42,14 +42,13 @@ Le déménagement est une période stressante où l'on a besoin de **services mu
 
 | Rôle | Nom | Responsabilités |
 |------|-----|-----------------|
-| 🧭 **Product Owner** | — | Définition du backlog, priorisation des user stories, validation des livrables |
-| 🏃 **Scrum Master** | — | Animation des cérémonies Scrum, levée des impediments, garant du processus |
-| 💻 **Développeur 1** | — | Frontend — Templates Django, HTML/CSS, filtres de recherche |
-| 💻 **Développeur 2** | — | Frontend — Pages profil, responsive design, JavaScript |
-| 💻 **Développeur 3** | — | Backend — Modèles, vues, URLs, logique métier |
-| 💻 **Développeur 4** | — | Backend — Base de données, authentification, déploiement |
+| 🧭 **Product Owner** | Amina Abid | Définition du backlog, priorisation des user stories, validation des livrables |
+| 🏃 **Scrum Master** | Ghazza Ghorbel| Animation des cérémonies Scrum, levée des impediments, garant du processus |
+| 💻 **Développeur 1** | Molka Dammak | Frontend — Templates Django, HTML/CSS, filtres de recherche |
+| 💻 **Développeur 2** | Maryem Kbaier| Frontend — Pages profil, responsive design, JavaScript |
+| 💻 **Développeur 3** | Emna Kaaniche| Backend — Modèles, vues, URLs, logique métier |
+| 💻 **Développeur 4** | Imen Kammoun| Backend — Base de données, authentification, déploiement |
 
-> ℹ️ Remplacez les tirets `—` par les noms réels des membres de l'équipe.
 
 ---
 
@@ -57,7 +56,7 @@ Le déménagement est une période stressante où l'on a besoin de **services mu
 
 ### Cadence des sprints
 
-- **Durée d'un sprint :** 2 semaines
+- **Durée d'un sprint :** 1 semaine
 - **Sprint actuel :** Sprint 1
 - **Nombre total de sprints prévus :** 4
 
@@ -126,9 +125,8 @@ Une user story est considérée comme **terminée** lorsque :
 - **Environnement virtuel :** `venv` / `pipenv`
 - **Variables d'environnement :** `python-decouple` / `django-environ`
 - **Serveur de développement :** `python manage.py runserver`
-- **Hébergement :** (à définir — Railway / Render / PythonAnywhere)
-- **Gestion de projet :** Jira / Trello
-- **Communication :** Discord / Slack
+- **Gestion de projet :** Jira 
+- **Communication :** Discord / Présentiel
 
 ---
 
